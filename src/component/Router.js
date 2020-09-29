@@ -4,6 +4,7 @@ import Auth from 'routes/Auth';
 import Home from 'routes/Home';
 import Profile from 'routes/Profile';
 import Navigation from 'component/Navigation';
+import Maps from 'component/Map';
 
 const AppRouter = ({isLoggedIn}) => {
     return(
@@ -14,6 +15,9 @@ const AppRouter = ({isLoggedIn}) => {
                 <>
                     <Route exact path="/">
                         <Home />
+                    </Route>
+                    <Route exact path="/">
+                        <Maps />
                     </Route>
                     <Route exact path="/profile">
                         <Profile />
