@@ -1,5 +1,6 @@
 import { GoogleApiWrapper, InfoWindow, Map, Marker } from "google-maps-react";
 import React from "react";
+import Twitt from "../routes/Twitt";
 
 class FindAddressPresenter extends React.Component {
    state = {
@@ -7,7 +8,6 @@ class FindAddressPresenter extends React.Component {
     lng: 0,
     loading: true
   };
-
   componentDidMount() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.successGetCurrentPosition);
@@ -15,6 +15,9 @@ class FindAddressPresenter extends React.Component {
       console.log("Geolocation is not supported by this browser");
     }
   }
+
+
+
 
    render() {
     const { lat, lng, loading } = this.state;
@@ -27,20 +30,12 @@ class FindAddressPresenter extends React.Component {
         <Map
           google={this.props.google}
           zoom={14}
-          center={{
-            lat,
-            lng
-          }}
-          initialCenter={{
-            lat,
-            lng
-          }}
+          center={{ lat, lng }}
+          initialCenter={{ lat, lng }}
         >
           <Marker name={"Current location"} />
           <InfoWindow>
-            <div>
-              <h1>test</h1>
-            </div>
+            <Twitt></Twitt>
           </InfoWindow>
         </Map>
       </div>
@@ -52,11 +47,12 @@ class FindAddressPresenter extends React.Component {
       ...this.state,
       lat: position.coords.latitude,
       lng: position.coords.longitude,
-      loading: false
+      loading: false,
+      
     });
   };
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyA07KpTijPFrEBp3vMgSNQjtZrqNYeSgXk'
+  apiKey: '..'
 })(FindAddressPresenter);
