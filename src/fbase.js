@@ -10,7 +10,13 @@ const firebaseConfig = {
     // messagingSenderId: process.env.REACT_APP_MESSAGIN_ID,
     // appId: process.env.REACT_APP_APP_ID
 
-    
+    apiKey: "AIzaSyAEfvPoozH1Dr_KhFGyx22ZbUCGQgudD_o",
+    authDomain: "milestone-f40ce.firebaseapp.com",
+    databaseURL: "https://milestone-f40ce.firebaseio.com",
+    projectId: "milestone-f40ce",
+    storageBucket: "milestone-f40ce.appspot.com",
+    messagingSenderId: "923884553918",
+    appId: "1:923884553918:web:22c13b3070b7f67c3480ef"
   };
   firebase.initializeApp(firebaseConfig);
 

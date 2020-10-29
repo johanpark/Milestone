@@ -5,8 +5,9 @@ import Home from 'routes/Home';
 import Profile from 'routes/Profile';
 import Navigation from 'component/Navigation';
 import Maps from 'component/Map';
+import Twitt from 'routes/Twitt';
 
-const AppRouter = ({isLoggedIn}) => {
+const AppRouter = ({isLoggedIn, userObj}) => {
     return(
         <Router>
             {isLoggedIn && <Navigation />}
@@ -15,9 +16,10 @@ const AppRouter = ({isLoggedIn}) => {
                 <>
                     <Route exact path="/">
                         <Home />
-                    </Route>
-                    <Route exact path="/">
-                        <Maps/>
+                        <Twitt userObj={userObj} />
+                        <Maps>
+                        
+                        </ Maps>
                     </Route>
                     <Route exact path="/profile">
                         <Profile />
